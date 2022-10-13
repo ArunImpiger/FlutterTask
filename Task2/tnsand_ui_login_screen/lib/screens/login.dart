@@ -14,8 +14,8 @@ class _LoginState extends State<Login> {
     var t_height;
     var b_height;
     if (MediaQuery.of(context).size.width <= 420) {
-      t_height = MediaQuery.of(context).size.height * 0.76;
-      b_height = MediaQuery.of(context).size.height * 0.17;
+      t_height = MediaQuery.of(context).size.height * 0.71;
+      b_height = MediaQuery.of(context).size.height * 0.21;
     } else {
       t_height = MediaQuery.of(context).size.height * 0.80;
       b_height = MediaQuery.of(context).size.height * 0.10;
@@ -35,10 +35,11 @@ class _LoginState extends State<Login> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * .30,
                     decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(50),
-                            topRight: Radius.circular(50))),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50)),
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

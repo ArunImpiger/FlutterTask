@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:tnsand_ui_login_screen/models/registration.dart';
 
 class Registration extends StatefulWidget {
@@ -15,6 +16,7 @@ class _RegistrationState extends State<Registration> {
 
   String? _name;
   String? _email;
+  String? firstPage = '1/4';
 
   TextEditingController _password = TextEditingController();
   TextEditingController _confirmPassword = TextEditingController();
@@ -64,13 +66,27 @@ class _RegistrationState extends State<Registration> {
       // mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: [
+            SizedBox(
+              width: 20,
+            ),
             Text(
               'Basic Information',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Icon(Icons.incomplete_circle_rounded)
+            SizedBox(
+              width: 120,
+            ),
+            CircularPercentIndicator(
+              radius: 17,
+              lineWidth: 3,
+              percent: .25,
+              progressColor: Color(0xFF462E82),
+              center: Text(
+                firstPage!,
+                style: TextStyle(color: Color(0xFF462E82)),
+              ),
+            ),
           ],
         ),
         TextFormField(
